@@ -1,0 +1,25 @@
+{
+  "personal_information": {
+    "age": 25,
+    "country": "Sweden",
+    "current_location": "Åsa Kungsbacka",
+    "hobbies": ["playing video games", "going for long walks"]
+  },
+  "previous_workplaces": [
+    {
+      "position": "Mailman",
+      "year": "2016-2017"
+    },
+    {
+      "position": "Enterainment Assistant",
+      "year": "2018-2019"
+    },
+    {
+      "position": "Chauffer Assistant",
+      "year": "Summer 2022"
+    }
+  ]
+}
+
+
+  

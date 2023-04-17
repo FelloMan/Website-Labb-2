@@ -1,0 +1,187 @@
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="page2.css">
+     
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="Css/page2.css">
+    <style>
+           body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+      
+      input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      #popup-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+      
+      #popup-modal p {
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      
+      #popup-modal img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      #popup-modal button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #3c64a5;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      #popup-modal button:hover {
+        background-color: #2a436f;
+      }
+      </style>
+</head>
+<body>
+    <header class="header">
+        
+        <div class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <ul>
+                
+                <li><a href=index.html>Return Home</a></li>
+                <li><a href=page2.html>Info about Me</a></li>
+                <li><a href=page3.html>My Talents</a></li>
+                <h1>Did <span>YOU</span> know?</h1> 
+                <li><a href=page4.html>Portfolio</a></li> 
+                <li><a href=page5.html>What I Can Offer</a></li> 
+                <li><a href=page6.html>Contact</a></li> 
+                <li><a href=page7.html>FAQ</a></li> 
+                <input type="text" id="user-input">
+                 
+         
+
+            </ul>
+        </nav>
+    </header>
+    <!--About Start-->
+    <header class="header"></header>
+    
+    <section id="about" class="about">
+        <div id="JS/json-data">
+            <ul id="my-list"></ul>
+        </div>
+
+
+
+
+        <div id="personal-information"></div>
+        <div id="previous-workplaces"></div>
+        </div>
+
+        <div id="popup-modal" style="display: none;">
+            <p>Life Could Be Dream!</p>
+            <img src="https://media.tenor.com/tC5i46ntiDsAAAAd/life-could-be-a-dream.gif">
+            <button id="close-modal">Close</button>
+          </div>
+
+
+
+       
+    
+  
+
+         
+
+    </section>
+    <script>
+        $(document).ready(function() {
+          $('#user-input').on('input', function() {
+            if ($(this).val() === '1337') {
+              $('#popup-modal').show();
+            }
+          });
+          
+          $('#close-modal').click(function() {
+            $('#popup-modal').hide();
+          });
+        });
+      </script>
+
+
+
+    <script>
+
+
+    // Parse the JSON data
+    const jsonData = {
+      "personal_information": {
+        "age": 25,
+        "country": "Sweden",
+        "current_location": "Åsa Kungsbacka",
+        "hobbies": ["playing video games", "going for long walks"]
+      },
+      "previous_workplaces": [
+        {
+          "position": "Mailman",
+          "year": "2016-2017"
+        },
+        {
+          "position": "Enterainment Assistant",
+          "year": "2018-2019"
+        },
+        {
+          "position": "Chauffer Assistant",
+          "year": "Summer 2022"
+        }
+      ]
+    };
+    
+    // Create HTML elements based on the parsed data
+    const personalInfoDiv = document.getElementById("personal-information");
+    personalInfoDiv.innerHTML += `<h2>Personal Information:</h2>
+                                  <p>Age: ${jsonData.personal_information.age}</p>
+                                  <p>Country: ${jsonData.personal_information.country}</p>
+                                  <p>Current Location: ${jsonData.personal_information.current_location}</p>
+                                  <p>Hobbies: ${jsonData.personal_information.hobbies.join(", ")}</p>`;
+    
+    const previousWorkplacesDiv = document.getElementById("previous-workplaces");
+    previousWorkplacesDiv.innerHTML += `<h2>Previous Workplaces:</h2>`;
+    jsonData.previous_workplaces.forEach(workplace => {
+        previousWorkplacesDiv.innerHTML += `<p>Position: ${workplace.position}, Year: ${workplace.year}</p>`;
+    });
+</script>
+
+
+
+
+    <script src="Js/main.js"></script>
+    <script src = "Js/popup.js"></script>
+    <script src = "Js/json-data.json"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
